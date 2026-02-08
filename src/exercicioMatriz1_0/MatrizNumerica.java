@@ -15,7 +15,7 @@ public class MatrizNumerica {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         // TODO code application logic here
         Scanner scn = new Scanner(System.in);
         int tamanhoMatriz = scn.nextInt();
@@ -41,8 +41,5 @@ public class MatrizNumerica {
         System.out.println("/nMain Diagonal = " + count);    
 
         scn.close();
-    }    
-    
-    
-    
+    }*/
 }

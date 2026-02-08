@@ -11,6 +11,7 @@ import java.util.Scanner;
  * @author Barbara
  */
 public class Exercicio111 {
+    /*
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         int linhas = scn.nextInt();
@@ -46,5 +47,5 @@ public class Exercicio111 {
                 System.out.print(" ");
             }
         }
-    }
+    }*/
 }
