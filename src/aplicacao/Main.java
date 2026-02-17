@@ -3,23 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package aplicacao;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
+import entities.Pedido;
+import entities_enum.StatusPedido;
+import java.util.Date;
+
 /**
  *
  * @author Barbara
  */
 public class Main {
     public static void main(String[] args) {
-       LocalDate ld = LocalDate.now();
-       LocalDateTime ldt = LocalDateTime.now();
-       Instant ins = Instant.now();
-       
-       LocalDateTime ldt2 = LocalDateTime.ofInstant(ins,ZoneId.of("Africa/Kigali"));
-   
-      System.out.println(ldt2);
-       
+        Pedido p01 = new Pedido(0001, new Date(), StatusPedido.PAGAMENTO_PENDENTE);
+        
+        System.out.println(p01);
     }
 }
