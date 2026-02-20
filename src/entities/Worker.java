@@ -1,0 +1,90 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package entities;
+
+import entities.enums.WorkerLevel;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+/**
+ *
+ * @author Barbara
+ */
+public class Worker {
+    private String name;
+    private WorkerLevel level;
+    private Double baseSalary;
+    
+    private Department department;
+    private List<HourContract> contracts = new ArrayList<>();
+    
+    public Worker() {
+    }
+
+    public Worker(String name, WorkerLevel level, Double baseSalary, Department department) {
+        this.name = name;
+        this.level = level;
+        this.baseSalary = baseSalary;
+        this.department = department;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public WorkerLevel getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level.valueOf(level);
+    }
+
+    public Double getBaseSalary() {
+        return baseSalary;
+    }
+
+    public void setBaseSalary(Double baseSalary) {
+        this.baseSalary = baseSalary;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String name) {
+        this.department.setName(name);
+    }
+
+    public List<HourContract> getContracts() {
+        return contracts;
+    }
+    
+    public void addContract(HourContract contract){
+        contracts.add(contract);
+    }
+    
+    public void removeContract(HourContract contract){
+        contracts.remove(contract);
+    }
+    public Double income(Integer year, Integer month){
+        double sum = baseSalary;
+        Calendar cal = Calendar.getInstance();
+        for(HourContract c : contracts){
+            cal.setTime(c.getDate());
+            int calYear = cal.get(Calendar.YEAR);
+            int calMonth = 1 + cal.get(Calendar.MONTH);
+            if(calYear == year && calMonth == month){
+                sum += c.totalValue();
+            }
+        }
+        return sum;
+    }
+}
